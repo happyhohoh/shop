@@ -11,10 +11,6 @@ header {
   max-height: 100vh;
 }
 
-.el-button{
-  background-color: black;
-}
-
 .logo {
   display: block;
   margin: 0 auto 2rem;
