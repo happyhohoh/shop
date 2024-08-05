@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  <el-button type="primary">Primary</el-button>
+  <!-- <el-button type="primary">Primary</el-button> -->
+  <!-- 一级路由组件 -->
+  <RouterView></RouterView>
 </template>
 
 <style scoped>
@@ -15,7 +17,7 @@ header {
   display: block;
   margin: 0 auto 2rem;
 }
-
+Login
 nav {
   width: 100%;
   font-size: 12px;
