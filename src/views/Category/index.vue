@@ -4,13 +4,14 @@ import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { getBannerAPI } from '@/apis/home'
 import GoodsItem from '../Home/components/GoodItem.vue'
+import { onBeforeRouteUpdate } from 'vue-router'
 
 
 // 这个是获取当前路由的所有信息，注意是当前的，所以可以去对应的路由组件中查看
 const route = useRoute()
 const categoryData = ref({})
-const getCategory = async () => {
-  const res = await getCategoryAPI(route.params.id)
+const getCategory = async (id=route.params.id) => {
+  const res = await getCategoryAPI(id)
   console.log(res)
   categoryData.value = res.result
 }
@@ -26,6 +27,12 @@ const getBanner = async () => {
 onMounted(() => {
   getCategory()
   getBanner()
+})
+
+onBeforeRouteUpdate((to)=>{
+  console.log("bainhual")
+  console.log(to)
+  getCategory(to.params.id)
 })
 
 </script>

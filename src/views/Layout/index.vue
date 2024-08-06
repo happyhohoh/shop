@@ -21,7 +21,9 @@ onMounted(()=>{
     <LayoutFixed :CategeoryList="category.categeoryList" />
     <LayoutNav />
     <LayoutHeader />
+    <!-- 添加key，破坏复用机制 -->
     <RouterView />
+    <!-- <RouterView :key="$route.fullPath"/> -->
     <LayoutFooter />
   </div>
 </template>
